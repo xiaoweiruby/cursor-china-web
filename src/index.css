@@ -1,0 +1,170 @@
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+/**
+ * 全局样式重置和基础设置
+ */
+@layer base {
+  * {
+    @apply border-0;
+  }
+  
+  body {
+    @apply bg-black text-white font-sans antialiased;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+  }
+  
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+/**
+ * 自定义组件样式
+ */
+@layer components {
+  /* 聚光灯效果 */
+  .spotlight-effect {
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .spotlight-effect::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(
+      circle at center,
+      rgba(255, 255, 255, 0.1) 0%,
+      rgba(255, 255, 255, 0.05) 30%,
+      transparent 70%
+    );
+    animation: spotlight-move 8s ease-in-out infinite;
+    pointer-events: none;
+  }
+  
+  @keyframes spotlight-move {
+    0%, 100% { transform: translate(-20%, -20%) rotate(0deg); }
+    25% { transform: translate(20%, -20%) rotate(90deg); }
+    50% { transform: translate(20%, 20%) rotate(180deg); }
+    75% { transform: translate(-20%, 20%) rotate(270deg); }
+  }
+  
+  /* 代码片段样式 */
+  .code-snippet {
+    @apply bg-gray-900 border border-gray-800 rounded-lg p-4 font-mono text-sm;
+    background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+  }
+  
+  /* 时间轴节点 */
+  .timeline-node {
+    @apply relative;
+  }
+  
+  .timeline-node::before {
+    content: '';
+    @apply absolute w-4 h-4 bg-white rounded-full border-4 border-black;
+    left: -8px;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+  
+  .timeline-node::after {
+    content: '';
+    @apply absolute w-px bg-gray-600;
+    left: 0;
+    top: 100%;
+    height: 2rem;
+  }
+  
+  .timeline-node:last-child::after {
+    display: none;
+  }
+  
+  /* 舞台幕布效果 */
+  .curtain-effect {
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .curtain-effect::before,
+  .curtain-effect::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    width: 50%;
+    height: 100%;
+    background: linear-gradient(
+      to bottom,
+      #1a1a1a 0%,
+      #2d2d2d 50%,
+      #1a1a1a 100%
+    );
+    transition: transform 0.8s ease-in-out;
+  }
+  
+  .curtain-effect::before {
+    left: 0;
+    transform: translateX(-100%);
+  }
+  
+  .curtain-effect::after {
+    right: 0;
+    transform: translateX(100%);
+  }
+  
+  .curtain-effect:hover::before {
+    transform: translateX(0);
+  }
+  
+  .curtain-effect:hover::after {
+    transform: translateX(0);
+  }
+  
+  /* 通行证样式 */
+  .passport-card {
+    @apply relative bg-gradient-to-br from-gray-900 to-black border border-gray-700 rounded-lg p-6;
+    background-image: 
+      linear-gradient(45deg, transparent 25%, rgba(255,255,255,0.1) 25%, rgba(255,255,255,0.1) 50%, transparent 50%, transparent 75%, rgba(255,255,255,0.1) 75%),
+      linear-gradient(-45deg, transparent 25%, rgba(255,255,255,0.1) 25%, rgba(255,255,255,0.1) 50%, transparent 50%, transparent 75%, rgba(255,255,255,0.1) 75%);
+    background-size: 20px 20px;
+  }
+  
+  /* 阶梯式布局 */
+  .stair-layout {
+    @apply grid gap-8;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  }
+  
+  .stair-layout > *:nth-child(even) {
+    @apply mt-8;
+  }
+}
+
+/**
+ * 工具类
+ */
+@layer utilities {
+  .text-gradient {
+    background: linear-gradient(135deg, #ffffff 0%, #cccccc 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  
+  .border-gradient {
+    border-image: linear-gradient(135deg, #ffffff 0%, #666666 100%) 1;
+  }
+  
+  .shadow-glow {
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.1);
+  }
+  
+  .backdrop-blur-custom {
+    backdrop-filter: blur(10px) saturate(180%);
+  }
+}

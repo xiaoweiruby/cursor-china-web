@@ -1,0 +1,7 @@
+export { default as HeroSection } from './HeroSection'
+export { default as IntroSection } from './IntroSection'
+export { default as RewardsSection } from './RewardsSection'
+export { default as ProcessSection } from './ProcessSection'
+export { default as ScheduleSection } from './ScheduleSection'
+export { default as RulesSection } from './RulesSection'
+export { default as CTASection } from './CTASection'
