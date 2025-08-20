@@ -124,11 +124,7 @@ const RewardsSection: React.FC<RewardsSectionProps> = ({ className }) => {
       className={`py-16 lg:py-24 relative overflow-hidden ${className}`}
       id="rewards"
     >
-      {/* 背景装饰 */}
-      <div className="absolute inset-0">
-        <div className="absolute top-1/4 right-0 w-96 h-96 bg-yellow-400/5 rounded-full blur-3xl" />
-        <div className="absolute bottom-1/4 left-0 w-80 h-80 bg-blue-400/5 rounded-full blur-3xl" />
-      </div>
+
 
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* 标题区域 */}
@@ -140,21 +136,30 @@ const RewardsSection: React.FC<RewardsSectionProps> = ({ className }) => {
           viewport={{ once: true }}
           className="mb-16 lg:mb-20"
         >
-          <h3 className="text-3xl sm:text-4xl font-bold text-white mb-12 text-center">专业评审团队</h3>
+          <h3 className="text-3xl sm:text-4xl font-bold text-white mb-8 text-center">
+            权威
+            <span className="bg-gradient-to-r from-yellow-400 via-orange-500 to-red-500 bg-clip-text text-transparent">
+              评审团队
+            </span>
+          </h3>
+          <p className="text-lg sm:text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed mb-12 text-center">
+            汇聚行业顶尖专家和技术大咖，为你的作品提供专业评审。
+            公平公正的评选标准，确保每一份创意都能得到应有的认可。
+          </p>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 max-w-6xl mx-auto">
             {/* 第一排 - 4个人 */}
             <div className="flex flex-col items-center group">
-              <div className="w-24 h-24 rounded-full overflow-hidden mb-3 group-hover:scale-105 transition-transform duration-300 border-2 border-blue-400/30">
-                <img src="/T老师.png" alt="T老师" className="w-full h-full object-cover" />
+              <div className="w-24 h-24 rounded-full overflow-hidden mb-3 group-hover:scale-105 transition-transform duration-300 border-2 border-white">
+                <img src="/T老师.jpg" alt="T老师" className="w-full h-full object-cover" />
               </div>
               <div className="text-white font-medium text-center">
-                <div className="text-base">T老师</div>
+                <div className="text-base">Condor</div>
                 <div className="text-sm text-gray-400 mt-1">Cursor 官方工程师</div>
               </div>
             </div>
             
             <div className="flex flex-col items-center group">
-              <div className="w-24 h-24 rounded-full overflow-hidden mb-3 group-hover:scale-105 transition-transform duration-300 border-2 border-green-400/30">
+              <div className="w-24 h-24 rounded-full overflow-hidden mb-3 group-hover:scale-105 transition-transform duration-300 border-2 border-white">
                 <img src="/大铭老师.jpg" alt="大铭老师" className="w-full h-full object-cover" />
               </div>
               <div className="text-white font-medium text-center">
@@ -164,7 +169,7 @@ const RewardsSection: React.FC<RewardsSectionProps> = ({ className }) => {
             </div>
             
             <div className="flex flex-col items-center group">
-              <div className="w-24 h-24 rounded-full overflow-hidden mb-3 group-hover:scale-105 transition-transform duration-300 border-2 border-teal-400/30">
+              <div className="w-24 h-24 rounded-full overflow-hidden mb-3 group-hover:scale-105 transition-transform duration-300 border-2 border-white">
                 <img src="/6. 卡兹克.png" alt="卡兹克" className="w-full h-full object-cover" />
               </div>
               <div className="text-white font-medium text-center">
@@ -174,7 +179,7 @@ const RewardsSection: React.FC<RewardsSectionProps> = ({ className }) => {
             </div>
             
             <div className="flex flex-col items-center group">
-              <div className="w-24 h-24 rounded-full overflow-hidden mb-3 group-hover:scale-105 transition-transform duration-300 border-2 border-indigo-400/30">
+              <div className="w-24 h-24 rounded-full overflow-hidden mb-3 group-hover:scale-105 transition-transform duration-300 border-2 border-white">
                 <img src="/7. 卡尔的AI沃茨.png" alt="卡尔的AI沃茨" className="w-full h-full object-cover" />
               </div>
               <div className="text-white font-medium text-center">
@@ -185,12 +190,23 @@ const RewardsSection: React.FC<RewardsSectionProps> = ({ className }) => {
             
             {/* 第二排 - 4个人 */}
             <div className="flex flex-col items-center group">
-              <div className="w-24 h-24 rounded-full overflow-hidden mb-3 group-hover:scale-105 transition-transform duration-300 border-2 border-cyan-400/30">
+              <div className="w-24 h-24 rounded-full overflow-hidden mb-3 group-hover:scale-105 transition-transform duration-300 border-2 border-white">
                 <img src="/向阳乔木.jpg" alt="向阳乔木" className="w-full h-full object-cover" />
               </div>
               <div className="text-white font-medium text-center">
                 <div className="text-base">向阳乔木</div>
                 <div className="text-sm text-gray-400 mt-1">技术专家</div>
+              </div>
+            </div>
+            
+            <div className="flex flex-col items-center group">
+              <div className="w-24 h-24 rounded-full overflow-hidden mb-3 group-hover:scale-105 transition-transform duration-300 border-2 border-white">
+                <img src="/硅星人.jpg" alt="硅星人主编" className="w-full h-full object-cover" />
+              </div>
+              <div className="text-white font-medium text-center">
+
+                <div className="text-sm text-gray-400 mt-1">硅星人主编</div>
+                <div className="text-sm text-gray-400 mt-1">科技媒体</div>
               </div>
             </div>
             
@@ -245,77 +261,186 @@ const RewardsSection: React.FC<RewardsSectionProps> = ({ className }) => {
           </p>
         </motion.div>
 
-        {/* 主要奖项 */}
+        {/* 主要奖项 - 三排布局 */}
         <motion.div
           variants={containerVariants}
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true }}
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8 mb-12"
+          className="space-y-8 mb-12"
         >
-          {rewards.map((reward, index) => {
-            const Icon = reward.icon
-            
-            return (
-              <motion.div
-                key={reward.rank}
-                variants={cardVariants}
-                className="group relative"
-              >
-                {/* 通行证样式卡片 */}
-                <div className={`pass-card ${reward.bgColor} backdrop-blur-sm border ${reward.borderColor} rounded-2xl p-6 h-full transition-all duration-300 group-hover:scale-105 group-hover:border-opacity-100`}>
-                  {/* 顶部装饰 */}
-                  <div className="flex items-center justify-between mb-4">
-                    <div className={`inline-flex items-center justify-center w-12 h-12 rounded-xl bg-gradient-to-r ${reward.color}`}>
-                      <Icon className="w-6 h-6 text-white" />
+          {/* 第一排：特等奖 */}
+          <div className="flex justify-center">
+            {rewards.filter(reward => reward.rank === '特别奖').map((reward, index) => {
+              const Icon = reward.icon
+              
+              return (
+                <motion.div
+                  key={reward.rank}
+                  variants={cardVariants}
+                  className="group relative w-full max-w-md"
+                >
+                  {/* 通行证样式卡片 */}
+                  <div className={`pass-card ${reward.bgColor} backdrop-blur-sm border-2 border-white rounded-2xl p-6 h-full transition-all duration-300 group-hover:scale-105 group-hover:border-opacity-100`}>
+                    {/* 顶部装饰 */}
+                    <div className="flex items-center justify-between mb-4">
+                      <div className={`inline-flex items-center justify-center w-12 h-12 rounded-xl bg-gradient-to-r ${reward.color}`}>
+                        <Icon className="w-6 h-6 text-white" />
+                      </div>
+                      <div className="text-right">
+                        <div className="text-xs text-gray-400 uppercase tracking-wider">获奖人数</div>
+                        <div className="text-sm font-semibold text-white">{reward.winners}</div>
+                      </div>
                     </div>
-                    <div className="text-right">
-                      <div className="text-xs text-gray-400 uppercase tracking-wider">获奖人数</div>
-                      <div className="text-sm font-semibold text-white">{reward.winners}</div>
+                    
+                    {/* 奖项信息 */}
+                    <div className="mb-4">
+                      <h3 className="text-xl font-bold text-white mb-2">{reward.rank}</h3>
+                      <div className={`text-2xl font-bold bg-gradient-to-r ${reward.color} bg-clip-text text-transparent`}>
+                        {reward.prize}
+                      </div>
+                      <p className="text-sm text-gray-300 mt-2">{reward.description}</p>
+                    </div>
+                    
+                    {/* 奖励详情 */}
+                    <div className="space-y-2">
+                      {reward.benefits.map((benefit, idx) => {
+                        return (
+                          <div key={idx} className="flex items-center text-xs text-gray-300">
+                            <div className="w-1.5 h-1.5 rounded-full bg-yellow-400 mr-2 flex-shrink-0" />
+                            {benefit}
+                          </div>
+                        )
+                      })}
+                    </div>
+                    
+                    {/* 底部装饰 */}
+                    <div className="absolute bottom-4 right-4 opacity-20 group-hover:opacity-40 transition-opacity duration-300">
+                      <Icon className={`w-8 h-8 ${reward.iconColor}`} />
                     </div>
                   </div>
-                  
-                  {/* 奖项信息 */}
-                  <div className="mb-4">
-                    <h3 className="text-xl font-bold text-white mb-2">{reward.rank}</h3>
-                    <div className={`text-2xl font-bold bg-gradient-to-r ${reward.color} bg-clip-text text-transparent`}>
-                      {reward.prize}
+                </motion.div>
+              )
+            })}
+          </div>
+
+          {/* 第二排：一等奖和二等奖 */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8">
+            {rewards.filter(reward => reward.rank === '一等奖' || reward.rank === '二等奖').map((reward, index) => {
+              const Icon = reward.icon
+              
+              return (
+                <motion.div
+                  key={reward.rank}
+                  variants={cardVariants}
+                  className="group relative"
+                >
+                  {/* 通行证样式卡片 */}
+                  <div className={`pass-card ${reward.bgColor} backdrop-blur-sm border-2 border-white rounded-2xl p-6 h-full transition-all duration-300 group-hover:scale-105 group-hover:border-opacity-100`}>
+                    {/* 顶部装饰 */}
+                    <div className="flex items-center justify-between mb-4">
+                      <div className={`inline-flex items-center justify-center w-12 h-12 rounded-xl bg-gradient-to-r ${reward.color}`}>
+                        <Icon className="w-6 h-6 text-white" />
+                      </div>
+                      <div className="text-right">
+                        <div className="text-xs text-gray-400 uppercase tracking-wider">获奖人数</div>
+                        <div className="text-sm font-semibold text-white">{reward.winners}</div>
+                      </div>
                     </div>
-                    <p className="text-sm text-gray-300 mt-2">{reward.description}</p>
+                    
+                    {/* 奖项信息 */}
+                    <div className="mb-4">
+                      <h3 className="text-xl font-bold text-white mb-2">{reward.rank}</h3>
+                      <div className={`text-2xl font-bold bg-gradient-to-r ${reward.color} bg-clip-text text-transparent`}>
+                        {reward.prize}
+                      </div>
+                      <p className="text-sm text-gray-300 mt-2">{reward.description}</p>
+                    </div>
+                    
+                    {/* 奖励详情 */}
+                    <div className="space-y-2">
+                      {reward.benefits.map((benefit, idx) => {
+                        // 根据奖项等级设置对应的颜色点
+                        let dotColor = 'bg-gray-400' // 默认颜色
+                        if (reward.rank === '一等奖') {
+                          dotColor = 'bg-gray-300'
+                        } else if (reward.rank === '二等奖') {
+                          dotColor = 'bg-amber-600'
+                        }
+                        
+                        return (
+                          <div key={idx} className="flex items-center text-xs text-gray-300">
+                            <div className={`w-1.5 h-1.5 rounded-full ${dotColor} mr-2 flex-shrink-0`} />
+                            {benefit}
+                          </div>
+                        )
+                      })}
+                    </div>
+                    
+                    {/* 底部装饰 */}
+                    <div className="absolute bottom-4 right-4 opacity-20 group-hover:opacity-40 transition-opacity duration-300">
+                      <Icon className={`w-8 h-8 ${reward.iconColor}`} />
+                    </div>
                   </div>
-                  
-                  {/* 奖励详情 */}
-                  <div className="space-y-2">
-                    {reward.benefits.map((benefit, idx) => {
-                      // 根据奖项等级设置对应的颜色点
-                      let dotColor = 'bg-gray-400' // 默认颜色
-                      if (reward.rank === '特别奖') {
-                        dotColor = 'bg-yellow-400'
-                      } else if (reward.rank === '一等奖') {
-                        dotColor = 'bg-gray-300'
-                      } else if (reward.rank === '二等奖') {
-                        dotColor = 'bg-amber-600'
-                      } else if (reward.rank === '入围奖') {
-                        dotColor = 'bg-blue-400'
-                      }
-                      
-                      return (
-                        <div key={idx} className="flex items-center text-xs text-gray-300">
-                          <div className={`w-1.5 h-1.5 rounded-full ${dotColor} mr-2 flex-shrink-0`} />
-                          {benefit}
-                        </div>
-                      )
-                    })}
+                </motion.div>
+              )
+            })}
+          </div>
+
+          {/* 第三排：入围奖 */}
+          <div className="flex justify-center">
+            {rewards.filter(reward => reward.rank === '入围奖').map((reward, index) => {
+              const Icon = reward.icon
+              
+              return (
+                <motion.div
+                  key={reward.rank}
+                  variants={cardVariants}
+                  className="group relative w-full max-w-md"
+                >
+                  {/* 通行证样式卡片 */}
+                  <div className={`pass-card ${reward.bgColor} backdrop-blur-sm border-2 border-white rounded-2xl p-6 h-full transition-all duration-300 group-hover:scale-105 group-hover:border-opacity-100`}>
+                    {/* 顶部装饰 */}
+                    <div className="flex items-center justify-between mb-4">
+                      <div className={`inline-flex items-center justify-center w-12 h-12 rounded-xl bg-gradient-to-r ${reward.color}`}>
+                        <Icon className="w-6 h-6 text-white" />
+                      </div>
+                      <div className="text-right">
+                        <div className="text-xs text-gray-400 uppercase tracking-wider">获奖人数</div>
+                        <div className="text-sm font-semibold text-white">{reward.winners}</div>
+                      </div>
+                    </div>
+                    
+                    {/* 奖项信息 */}
+                    <div className="mb-4">
+                      <h3 className="text-xl font-bold text-white mb-2">{reward.rank}</h3>
+                      <div className={`text-2xl font-bold bg-gradient-to-r ${reward.color} bg-clip-text text-transparent`}>
+                        {reward.prize}
+                      </div>
+                      <p className="text-sm text-gray-300 mt-2">{reward.description}</p>
+                    </div>
+                    
+                    {/* 奖励详情 */}
+                    <div className="space-y-2">
+                      {reward.benefits.map((benefit, idx) => {
+                        return (
+                          <div key={idx} className="flex items-center text-xs text-gray-300">
+                            <div className="w-1.5 h-1.5 rounded-full bg-blue-400 mr-2 flex-shrink-0" />
+                            {benefit}
+                          </div>
+                        )
+                      })}
+                    </div>
+                    
+                    {/* 底部装饰 */}
+                    <div className="absolute bottom-4 right-4 opacity-20 group-hover:opacity-40 transition-opacity duration-300">
+                      <Icon className={`w-8 h-8 ${reward.iconColor}`} />
+                    </div>
                   </div>
-                  
-                  {/* 底部装饰 */}
-                  <div className="absolute bottom-4 right-4 opacity-20 group-hover:opacity-40 transition-opacity duration-300">
-                    <Icon className={`w-8 h-8 ${reward.iconColor}`} />
-                  </div>
-                </div>
-              </motion.div>
-            )
-          })}
+                </motion.div>
+              )
+            })}
+          </div>
         </motion.div>
 
         {/* 特别奖项 */}

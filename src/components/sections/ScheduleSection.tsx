@@ -135,14 +135,10 @@ const ScheduleSection: React.FC<ScheduleSectionProps> = ({ className }) => {
 
   return (
     <section 
-      className={`py-16 lg:py-24 relative overflow-hidden ${className}`}
+      className={`py-8 md:py-16 relative overflow-hidden ${className}`}
       id="schedule"
     >
-      {/* 背景装饰 */}
-      <div className="absolute inset-0">
-        <div className="absolute top-1/4 left-0 w-96 h-96 bg-blue-400/5 rounded-full blur-3xl" />
-        <div className="absolute bottom-1/4 right-0 w-80 h-80 bg-purple-400/5 rounded-full blur-3xl" />
-      </div>
+
 
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* 标题区域 */}
@@ -203,20 +199,20 @@ const ScheduleSection: React.FC<ScheduleSectionProps> = ({ className }) => {
                   </div>
                   
                   {/* 内容卡片 */}
-                  <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-6 hover:bg-white/10 hover:border-white/20 transition-all duration-300">
-                    <div className="text-center lg:text-center">
+                  <div className="bg-white/5 backdrop-blur-sm border-2 border-white rounded-2xl p-6 hover:bg-white/10 hover:border-white transition-all duration-300 h-[240px] flex flex-col justify-center">
+                    <div className="text-center lg:text-center w-full">
                       <div className={`text-sm font-semibold ${item.color} mb-2`}>
                         {item.date}
                       </div>
                       <h3 className="text-lg font-bold text-white mb-3">
                         {item.title}
                       </h3>
-                      <p className="text-gray-300 text-sm leading-relaxed">
+                      <p className="text-gray-300 text-sm leading-relaxed mb-4">
                         {item.description}
                       </p>
                       
                       {/* 状态标签 */}
-                      <div className="mt-4">
+                      <div>
                         <span className={`inline-flex items-center px-3 py-1 rounded-full text-xs font-medium ${
                           item.status === 'completed' ? 'bg-green-400/20 text-green-400' :
                           item.status === 'active' ? 'bg-blue-400/20 text-blue-400' :
@@ -235,37 +231,13 @@ const ScheduleSection: React.FC<ScheduleSectionProps> = ({ className }) => {
         </motion.div>
 
         {/* 重要日期提醒 */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.5 }}
-          viewport={{ once: true }}
-          className="mb-16"
-        >
-          <h3 className="text-2xl font-bold text-white text-center mb-8">重要日期提醒</h3>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-            {importantDates.map((item, index) => (
-              <motion.div
-                key={item.date}
-                initial={{ opacity: 0, scale: 0.9 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                transition={{ duration: 0.6, delay: 0.7 + index * 0.1 }}
-                viewport={{ once: true }}
-                className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-4 text-center hover:bg-white/10 hover:border-white/20 transition-all duration-300"
-              >
-                <div className="text-2xl font-bold text-white mb-1">{item.date}</div>
-                <div className="text-sm font-semibold text-blue-400 mb-2">{item.event}</div>
-                <div className="text-xs text-gray-400">{item.description}</div>
-              </motion.div>
-            ))}
-          </div>
-        </motion.div>
+
 
         {/* 倒计时提醒 */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.7 }}
+          transition={{ duration: 0.8, delay: 0.5 }}
           viewport={{ once: true }}
           className="text-center"
         >

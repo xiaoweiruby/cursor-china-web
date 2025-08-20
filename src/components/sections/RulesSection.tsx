@@ -143,15 +143,10 @@ const RulesSection: React.FC<RulesSectionProps> = ({ className }) => {
 
   return (
     <section 
-      className={`py-16 lg:py-24 relative overflow-hidden ${className}`}
+      className={`py-8 md:py-16 relative overflow-hidden ${className}`}
       id="rules"
     >
-      {/* 背景装饰 */}
-      <div className="absolute inset-0">
-        <div className="absolute top-0 left-1/4 w-96 h-96 bg-purple-400/5 rounded-full blur-3xl" />
-        <div className="absolute bottom-0 right-1/4 w-80 h-80 bg-blue-400/5 rounded-full blur-3xl" />
-        <div className="absolute top-1/2 left-0 w-64 h-64 bg-green-400/5 rounded-full blur-3xl" />
-      </div>
+
 
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* 标题区域 */}
@@ -191,7 +186,7 @@ const RulesSection: React.FC<RulesSectionProps> = ({ className }) => {
                 variants={itemVariants}
                 className="group"
               >
-                <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-8 hover:bg-white/10 hover:border-white/20 transition-all duration-300 h-full">
+                <div className="bg-white/5 backdrop-blur-sm border-2 border-white rounded-2xl p-8 hover:bg-white/10 hover:border-white transition-all duration-300 h-full">
                   {/* 规则标题 */}
                   <div className="flex items-center mb-6">
                     <div className={`w-12 h-12 rounded-xl ${rule.bgColor} border-2 ${rule.borderColor} flex items-center justify-center mr-4 group-hover:scale-110 transition-transform duration-300`}>
@@ -254,7 +249,7 @@ const RulesSection: React.FC<RulesSectionProps> = ({ className }) => {
                   viewport={{ once: true }}
                   className="group"
                 >
-                  <div className={`bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-6 hover:bg-white/10 hover:border-white/20 transition-all duration-300 h-full ${
+                  <div className={`bg-white/5 backdrop-blur-sm border-2 border-white rounded-2xl p-6 hover:bg-white/10 hover:border-white transition-all duration-300 h-full ${
                     guide.type === 'allowed' ? 'hover:border-green-400/30' :
                     guide.type === 'forbidden' ? 'hover:border-red-400/30' :
                     'hover:border-yellow-400/30'
