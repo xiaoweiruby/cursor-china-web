@@ -107,15 +107,12 @@ const CTASection: React.FC<CTASectionProps> = ({ className }) => {
 
   return (
     <section 
-      className={`relative min-h-screen flex items-center justify-center overflow-hidden ${className}`}
+      className={`relative min-h-screen flex items-center justify-center overflow-hidden py-8 md:py-16 ${className}`}
       id="cta"
     >
       {/* 舞台背景 */}
       <div className="absolute inset-0 bg-gradient-to-b from-black via-gray-900 to-black">
-        {/* 聚光灯效果 */}
-        <div className="absolute top-1/4 left-1/2 transform -translate-x-1/2 w-96 h-96 bg-gradient-radial from-white/20 via-white/5 to-transparent rounded-full blur-3xl" />
-        <div className="absolute bottom-1/4 left-1/4 w-64 h-64 bg-gradient-radial from-blue-400/10 to-transparent rounded-full blur-2xl" />
-        <div className="absolute bottom-1/4 right-1/4 w-64 h-64 bg-gradient-radial from-purple-400/10 to-transparent rounded-full blur-2xl" />
+
         
         {/* 星光装饰 */}
         {[...Array(20)].map((_, i) => (
@@ -221,7 +218,7 @@ const CTASection: React.FC<CTASectionProps> = ({ className }) => {
 
           {/* 特色亮点 */}
           <motion.div variants={itemVariants} className="mb-8">
-            <h3 className="text-2xl font-bold text-white mb-6">为什么要参加？</h3>
+
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 max-w-4xl mx-auto">
               {features.map((feature, index) => (
                 <motion.div
@@ -229,7 +226,7 @@ const CTASection: React.FC<CTASectionProps> = ({ className }) => {
                   initial={{ opacity: 0, x: -20 }}
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ duration: 0.6, delay: 2.5 + index * 0.1 }}
-                  className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-4 hover:bg-white/10 hover:border-white/20 transition-all duration-300"
+                  className="bg-white/5 backdrop-blur-sm border-2 border-white rounded-xl p-4 hover:bg-white/10 hover:border-white transition-all duration-300"
                 >
                   <p className="text-gray-300 text-sm">{feature}</p>
                 </motion.div>
@@ -248,22 +245,27 @@ const CTASection: React.FC<CTASectionProps> = ({ className }) => {
           <motion.div variants={itemVariants} className="mb-6">
             <div className="text-center">
               <h3 className="font-medium text-white mb-4 text-lg">支持社区</h3>
-              <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-3 max-w-4xl mx-auto">
-                <div className="text-gray-400 text-sm bg-white/5 backdrop-blur-sm border border-white/10 rounded-lg px-4 py-3 whitespace-nowrap">Cursor 中文圈</div>
-                <div className="text-gray-400 text-sm bg-white/5 backdrop-blur-sm border border-white/10 rounded-lg px-4 py-3">Cursor 中文圈社群</div>
-                <div className="text-gray-400 text-sm bg-white/5 backdrop-blur-sm border border-white/10 rounded-lg px-4 py-3">阿里云开发者社区</div>
-                <div className="text-gray-400 text-sm bg-white/5 backdrop-blur-sm border border-white/10 rounded-lg px-4 py-3">阿里云瑶池数据库</div>
-                <div className="text-gray-400 text-sm bg-white/5 backdrop-blur-sm border border-white/10 rounded-lg px-4 py-3 whitespace-nowrap">数字生命卡兹克</div>
-                <div className="text-gray-400 text-sm bg-white/5 backdrop-blur-sm border border-white/10 rounded-lg px-4 py-3">思否</div>
-                <div className="text-gray-400 text-sm bg-white/5 backdrop-blur-sm border border-white/10 rounded-lg px-4 py-3">交大工研院</div>
-                <div className="text-gray-400 text-sm bg-white/5 backdrop-blur-sm border border-white/10 rounded-lg px-4 py-3">一支烟花公众号</div>
-                <div className="text-gray-400 text-sm bg-white/5 backdrop-blur-sm border border-white/10 rounded-lg px-4 py-3">人人都是产品经理</div>
-                <div className="text-gray-400 text-sm bg-white/5 backdrop-blur-sm border border-white/10 rounded-lg px-4 py-3">CSDN</div>
-                <div className="text-gray-400 text-sm bg-white/5 backdrop-blur-sm border border-white/10 rounded-lg px-4 py-3">Datafun</div>
-                <div className="text-gray-400 text-sm bg-white/5 backdrop-blur-sm border border-white/10 rounded-lg px-4 py-3">infoQ</div>
-                <div className="text-gray-400 text-sm bg-white/5 backdrop-blur-sm border border-white/10 rounded-lg px-4 py-3">极客时间</div>
-                <div className="text-gray-400 text-sm bg-white/5 backdrop-blur-sm border border-white/10 rounded-lg px-4 py-3">GO夜读</div>
-                <div className="text-gray-400 text-sm bg-white/5 backdrop-blur-sm border border-white/10 rounded-lg px-4 py-3">WaytoAGI</div>
+              <div className="grid grid-cols-3 gap-3 max-w-4xl mx-auto">
+                <div className="text-gray-400 text-sm bg-black backdrop-blur-sm border-2 border-white rounded-lg px-4 py-3 h-20 flex items-center justify-center">Cursor 中文圈</div>
+                <div className="text-gray-400 text-sm bg-black backdrop-blur-sm border-2 border-white rounded-lg px-4 py-3 h-20 flex items-center justify-center">Cursor 中文圈社群</div>
+                <div className="text-gray-400 text-sm bg-black backdrop-blur-sm border-2 border-white rounded-lg px-4 py-3 h-20 flex items-center justify-center">阿里云开发者社区</div>
+                <div className="text-gray-400 text-sm bg-black backdrop-blur-sm border-2 border-white rounded-lg px-4 py-3 h-20 flex items-center justify-center">阿里云瑶池数据库</div>
+                <div className="text-gray-400 text-sm bg-black backdrop-blur-sm border-2 border-white rounded-lg px-4 py-3 h-20 flex items-center justify-center">数字生命卡兹克</div>
+                <div className="text-gray-400 text-sm bg-black backdrop-blur-sm border-2 border-white rounded-lg px-4 py-3 h-20 flex items-center justify-center">
+                  <img src="/logo/思否.png" alt="思否" className="h-12 w-auto" />
+                </div>
+                <div className="text-gray-400 text-sm bg-black backdrop-blur-sm border-2 border-white rounded-lg px-4 py-3 h-20 flex items-center justify-center">交大工研院</div>
+                <div className="text-sm bg-black backdrop-blur-sm border-2 border-white rounded-lg px-4 py-3 h-20 flex items-center justify-center">
+                  <img src="/logo/一支烟花.png" alt="一支烟花" className="h-12 w-auto" />
+                </div>
+                <div className="text-gray-400 text-sm bg-black backdrop-blur-sm border-2 border-white rounded-lg px-4 py-3 h-20 flex items-center justify-center">人人都是产品经理</div>
+                <div className="text-gray-400 text-sm bg-black backdrop-blur-sm border-2 border-white rounded-lg px-4 py-3 h-20 flex items-center justify-center">CSDN</div>
+                <div className="text-gray-400 text-sm bg-black backdrop-blur-sm border-2 border-white rounded-lg px-4 py-3 h-20 flex items-center justify-center">Datafun</div>
+                <div className="text-gray-400 text-sm bg-black backdrop-blur-sm border-2 border-white rounded-lg px-4 py-3 h-20 flex items-center justify-center">infoQ</div>
+                <div className="text-gray-400 text-sm bg-black backdrop-blur-sm border-2 border-white rounded-lg px-4 py-3 h-20 flex items-center justify-center">极客时间</div>
+                <div className="text-sm bg-black backdrop-blur-sm border-2 border-white rounded-lg px-4 py-3 h-20 flex items-center justify-center">
+                  <img src="/logo/GO夜读.jpg" alt="GO夜读" className="h-12 w-auto" />
+                </div>
               </div>
             </div>
           </motion.div>

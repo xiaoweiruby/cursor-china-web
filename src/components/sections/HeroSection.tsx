@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react'
 import { motion, useAnimation } from 'framer-motion'
-import { ChevronDown, Sparkles, Trophy, Users } from 'lucide-react'
+import { ChevronDown, Sparkles, Trophy, Users, PenTool } from 'lucide-react'
 import { Button } from '../ui'
 
 interface HeroSectionProps {
@@ -38,7 +38,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({ className }) => {
 
   return (
     <section 
-      className={`relative min-h-screen flex items-center justify-center overflow-hidden ${className}`}
+      className={`relative min-h-screen flex items-center justify-center overflow-hidden py-8 md:py-16 ${className}`}
       id="hero"
     >
 
@@ -48,20 +48,38 @@ const HeroSection: React.FC<HeroSectionProps> = ({ className }) => {
         {/* 网格背景 */}
         <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.02)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.02)_1px,transparent_1px)] bg-[size:50px_50px]" />
         
-        {/* 渐变光晕 */}
-        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-white/5 rounded-full blur-3xl" />
-        <div className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-white/3 rounded-full blur-3xl" />
+
       </div>
 
       {/* 主要内容 */}
       <div className="relative z-10 text-center max-w-5xl mx-auto px-6 sm:px-8 lg:px-12">
 
         {/* Cursor Logo */}
+        {/* 主办方和赞助方信息 */}
         <motion.div
-          initial={{ opacity: 0, y: -20 }}
+          initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.1 }}
-          className="flex items-center justify-center mb-4 mt-8"
+          className="flex items-center justify-center mb-6 mt-8"
+        >
+          <div className="flex flex-row justify-between items-center w-full max-w-6xl mx-auto px-8">
+            <div className="text-gray-400 text-base text-left flex-shrink-0">
+              <span className="font-bold text-white">主办方：</span>
+              <span className="font-bold">Cursor 中文圈</span>
+            </div>
+            <div className="flex-grow"></div>
+            <div className="text-gray-400 text-base text-right flex-shrink-0">
+              <span className="font-bold text-white">赞助方：</span>
+              <span className="font-bold">阿里云数据库 AnalyticDB 产品</span>
+            </div>
+          </div>
+        </motion.div>
+
+        <motion.div
+          initial={{ opacity: 0, y: 0 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.15 }}
+          className="flex items-center justify-center mb-4"
         >
           <img 
             src="/cursor logo.png" 
@@ -77,11 +95,25 @@ const HeroSection: React.FC<HeroSectionProps> = ({ className }) => {
           transition={{ duration: 0.8, delay: 0.2 }}
           className="flex items-center justify-center mb-6"
         >
-          <div className="flex items-center space-x-2 bg-white/5 backdrop-blur-sm border border-white/10 rounded-full px-4 py-2">
+          <div className="flex items-center space-x-2 bg-white/5 backdrop-blur-sm border-2 border-white rounded-full px-4 py-2">
             <Sparkles className="w-4 h-4 text-yellow-400" />
-            <span className="text-sm text-gray-300">首届征文大赛正式启动</span>
+            <span className="text-base text-gray-300">首届征文大赛正式启动</span>
             <Sparkles className="w-4 h-4 text-yellow-400" />
           </div>
+        </motion.div>
+
+        {/* 主图 */}
+        <motion.div
+          initial={{ opacity: 0, scale: 0.8 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.8, delay: 0.4 }}
+          className="mb-6"
+        >
+          <img 
+            src="/主图.png" 
+            alt="主图" 
+            className="w-80 h-40 sm:w-96 sm:h-48 lg:w-[32rem] lg:h-64 object-contain mx-auto filter brightness-90 hover:brightness-100 transition-all duration-300"
+          />
         </motion.div>
 
         {/* 主标题 */}
@@ -98,8 +130,22 @@ const HeroSection: React.FC<HeroSectionProps> = ({ className }) => {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.6 }}
-          className="text-base sm:text-lg lg:text-xl text-gray-300 mb-8 max-w-4xl mx-auto leading-relaxed"
+          className="text-lg sm:text-xl lg:text-2xl text-gray-300 mb-6 max-w-4xl mx-auto leading-relaxed"
         >用 Supabase 把想法冲上岸</motion.p>
+
+        {/* 征文时间 */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.7 }}
+          className="flex items-center justify-center mb-8"
+        >
+          <div className="flex items-center space-x-2 bg-white/5 backdrop-blur-sm border-2 border-white rounded-full px-4 py-2">
+            <PenTool className="w-4 h-4 text-blue-400" />
+            <span className="text-base text-gray-300">征文时间即日起-2025年9月20日 23:59截止</span>
+            <PenTool className="w-4 h-4 text-blue-400" />
+          </div>
+        </motion.div>
 
         {/* 统计数据 */}
         <motion.div
@@ -113,7 +159,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({ className }) => {
               initial={{ opacity: 0, scale: 0.8 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.6, delay: 0.8 }}
-              className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-6 hover:bg-white/10 hover:border-white/20 transition-all duration-300"
+              className="bg-white/5 backdrop-blur-sm border-2 border-white rounded-2xl p-6 hover:bg-white/10 hover:border-white transition-all duration-300"
             >
               <Trophy className="w-8 h-8 text-yellow-400 mx-auto mb-3" />
               <div className="text-2xl font-bold text-white mb-1">5万+</div>
@@ -123,7 +169,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({ className }) => {
               initial={{ opacity: 0, scale: 0.8 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.6, delay: 1.0 }}
-              className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-6 hover:bg-white/10 hover:border-white/20 transition-all duration-300"
+              className="bg-white/5 backdrop-blur-sm border-2 border-white rounded-2xl p-6 hover:bg-white/10 hover:border-white transition-all duration-300"
             >
               <Users className="w-8 h-8 text-blue-400 mx-auto mb-3" />
               <div className="text-2xl font-bold text-white mb-1">10000+</div>
@@ -133,7 +179,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({ className }) => {
               initial={{ opacity: 0, scale: 0.8 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.6, delay: 1.2 }}
-              className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-6 hover:bg-white/10 hover:border-white/20 transition-all duration-300"
+              className="bg-white/5 backdrop-blur-sm border-2 border-white rounded-2xl p-6 hover:bg-white/10 hover:border-white transition-all duration-300"
             >
               <Sparkles className="w-8 h-8 text-green-400 mx-auto mb-3" />
               <div className="text-2xl font-bold text-white mb-1">30天</div>
@@ -143,7 +189,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({ className }) => {
               initial={{ opacity: 0, scale: 0.8 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.6, delay: 1.4 }}
-              className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-6 hover:bg-white/10 hover:border-white/20 transition-all duration-300"
+              className="bg-white/5 backdrop-blur-sm border-2 border-white rounded-2xl p-6 hover:bg-white/10 hover:border-white transition-all duration-300"
             >
               <Sparkles className="w-8 h-8 text-purple-400 mx-auto mb-3" />
               <div className="text-2xl font-bold text-white mb-1">无限</div>
@@ -152,24 +198,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({ className }) => {
           </div>
         </motion.div>
 
-        {/* 主办方和赞助方信息 */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 1.0 }}
-          className="flex items-center justify-center mb-6"
-        >
-          <div className="text-center flex flex-row justify-center items-center space-x-8">
-            <div className="text-gray-400 text-base">
-              <span className="font-medium text-white">主办方：</span>
-              cursor 中文圈
-            </div>
-            <div className="text-gray-400 text-base">
-              <span className="font-medium text-white">赞助方：</span>
-              阿里云数据库 AnalyticDB 产品
-            </div>
-          </div>
-        </motion.div>
+
 
         {/* 底部号召 */}
         <motion.div
@@ -178,7 +207,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({ className }) => {
           transition={{ duration: 0.8, delay: 1.1 }}
           className="text-center mb-8"
         >
-          <div className="bg-gradient-to-r from-white/5 to-white/10 backdrop-blur-sm border border-white/10 rounded-2xl p-8 lg:p-12 max-w-4xl mx-auto">
+          <div className="bg-gradient-to-r from-white/5 to-white/10 backdrop-blur-sm border-2 border-white rounded-2xl p-8 lg:p-12 max-w-4xl mx-auto">
             <h3 className="text-2xl lg:text-3xl font-bold text-white mb-4">
               准备好展示你的才华了吗？
             </h3>
@@ -205,13 +234,39 @@ const HeroSection: React.FC<HeroSectionProps> = ({ className }) => {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 1.2 }}
-          className="flex items-center justify-center mb-12"
+          className="flex flex-col items-center justify-center mb-12"
         >
           <Button
             size="lg"
             onClick={handleSubmit}
-            className="bg-white text-black hover:bg-gray-100 font-bold px-16 py-6 text-2xl rounded-xl shadow-2xl hover:shadow-white/20 transform hover:scale-105 transition-all duration-300"
-          >立即参赛</Button>
+            className="bg-white text-black hover:bg-gray-100 font-bold px-16 py-6 text-2xl rounded-xl shadow-2xl hover:shadow-white/20 transform hover:scale-105 transition-all duration-300 mb-8"
+          >扫码报名</Button>
+          
+          {/* 二维码图片 */}
+          <motion.div
+            initial={{ opacity: 0, scale: 0.8 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.6, delay: 1.4 }}
+            className="relative group"
+          >
+            <div className="bg-white/10 backdrop-blur-sm border-2 border-white/20 rounded-2xl p-6 shadow-2xl hover:shadow-white/10 transition-all duration-300 group-hover:scale-105">
+              <img 
+                src="/二维码报名.png" 
+                alt="扫码报名" 
+                className="w-32 h-32 object-contain rounded-lg"
+              />
+              
+              {/* 装饰光效 */}
+              <div className="absolute inset-0 bg-gradient-to-r from-blue-400/20 via-purple-400/20 to-pink-400/20 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+            </div>
+            
+            {/* 提示文字 */}
+            <div className="text-center mt-4">
+              <p className="text-sm text-gray-400 group-hover:text-gray-300 transition-colors duration-300">
+                扫码快速报名参赛
+              </p>
+            </div>
+          </motion.div>
         </motion.div>
       </div>
     </section>

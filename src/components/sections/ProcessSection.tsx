@@ -1,6 +1,6 @@
 import React from 'react'
 import { motion } from 'framer-motion'
-import { FileText, Upload, Users, Trophy, CheckCircle, Clock, ArrowRight, Code, Target } from 'lucide-react'
+import { FileText, Upload, Users, Trophy, CheckCircle, Clock, Code, Target } from 'lucide-react'
 
 interface ProcessSectionProps {
   className?: string
@@ -46,7 +46,7 @@ const ProcessSection: React.FC<ProcessSectionProps> = ({ className }) => {
       id: 3,
       icon: Users,
       title: '专业评审',
-      description: '由Cursor官方团队和社区专家组成的评审团进行评选',
+      description: '由Cursor中文圈团队和社区专家组成的评审团进行评选',
       details: [
         '初审：内容质量筛选',
         '复审：专业评委打分',
@@ -128,14 +128,10 @@ const ProcessSection: React.FC<ProcessSectionProps> = ({ className }) => {
 
   return (
     <section 
-      className={`py-16 lg:py-24 relative overflow-hidden ${className}`}
+      className={`py-8 md:py-16 relative overflow-hidden ${className}`}
       id="process"
     >
-      {/* 背景装饰 */}
-      <div className="absolute inset-0">
-        <div className="absolute top-0 left-1/3 w-80 h-80 bg-purple-400/5 rounded-full blur-3xl" />
-        <div className="absolute bottom-0 right-1/3 w-96 h-96 bg-blue-400/5 rounded-full blur-3xl" />
-      </div>
+
 
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* 标题区域 */}
@@ -152,10 +148,7 @@ const ProcessSection: React.FC<ProcessSectionProps> = ({ className }) => {
               流程指南
             </span>
           </h2>
-          <p className="text-lg sm:text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
-            简单四步，轻松参赛。从准备作品到获得奖励，
-            我们为你提供清晰的指导和全程支持。
-          </p>
+          <p className="text-lg sm:text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed">简单四步，轻松参赛。从准备作品到获得奖励， 我们为你提供清晰的指导和全程支持。</p>
         </motion.div>
 
         {/* 流程时间轴 */}
@@ -178,7 +171,7 @@ const ProcessSection: React.FC<ProcessSectionProps> = ({ className }) => {
                   className="relative"
                 >
                   {/* 内容卡片 */}
-                  <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-6 hover:bg-white/10 hover:border-white/20 transition-all duration-300 h-full">
+                  <div className="bg-white/5 backdrop-blur-sm border-2 border-white rounded-2xl p-6 hover:bg-white/10 hover:border-white transition-all duration-300 h-full">
                     {/* 图标和步骤号 */}
                     <div className="flex items-center mb-4">
                       <div className={`w-12 h-12 rounded-xl ${step.bgColor} border ${step.borderColor} flex items-center justify-center mr-4`}>
@@ -201,21 +194,7 @@ const ProcessSection: React.FC<ProcessSectionProps> = ({ className }) => {
                     </ul>
                   </div>
                   
-                  {/* 连接箭头 - 仅在桌面端显示 */}
-                  {index < steps.length - 1 && index % 2 === 0 && (
-                    <div className="hidden md:block absolute top-1/2 -right-3 lg:-right-4 transform -translate-y-1/2 z-10">
-                      <ArrowRight className="w-6 h-6 text-white/30" />
-                    </div>
-                  )}
-                  
-                  {/* 向下箭头 - 在第二个卡片后显示 */}
-                  {index === 1 && (
-                    <div className="hidden md:block absolute -bottom-4 left-1/2 transform -translate-x-1/2 z-10">
-                      <div className="rotate-90">
-                        <ArrowRight className="w-6 h-6 text-white/30" />
-                      </div>
-                    </div>
-                  )}
+
                 </motion.div>
               )
             })}
@@ -237,7 +216,7 @@ const ProcessSection: React.FC<ProcessSectionProps> = ({ className }) => {
             {/* 四个维度的评选标准 */}
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
               {/* 技术实现维度 */}
-              <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-6 hover:bg-white/10 hover:border-white/20 transition-all duration-300">
+              <div className="bg-white/5 backdrop-blur-sm border-2 border-white rounded-2xl p-6 hover:bg-white/10 hover:border-white transition-all duration-300">
                 <div className="flex items-center justify-center mb-4">
                    <div className="inline-flex items-center justify-center w-12 h-12 rounded-xl bg-blue-400/20 border border-blue-400/30">
                      <Code className="w-6 h-6 text-blue-400" />
@@ -273,7 +252,7 @@ const ProcessSection: React.FC<ProcessSectionProps> = ({ className }) => {
               </div>
               
               {/* 实用价值维度 */}
-              <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-6 hover:bg-white/10 hover:border-white/20 transition-all duration-300">
+              <div className="bg-white/5 backdrop-blur-sm border-2 border-white rounded-2xl p-6 hover:bg-white/10 hover:border-white transition-all duration-300">
                 <div className="flex items-center justify-center mb-4">
                    <div className="inline-flex items-center justify-center w-12 h-12 rounded-xl bg-green-400/20 border border-green-400/30">
                      <Target className="w-6 h-6 text-green-400" />
@@ -302,7 +281,7 @@ const ProcessSection: React.FC<ProcessSectionProps> = ({ className }) => {
               </div>
               
               {/* 内容呈现维度 */}
-              <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-6 hover:bg-white/10 hover:border-white/20 transition-all duration-300">
+              <div className="bg-white/5 backdrop-blur-sm border-2 border-white rounded-2xl p-6 hover:bg-white/10 hover:border-white transition-all duration-300">
                 <div className="flex items-center justify-center mb-4">
                    <div className="inline-flex items-center justify-center w-12 h-12 rounded-xl bg-yellow-400/20 border border-yellow-400/30">
                      <FileText className="w-6 h-6 text-yellow-400" />
@@ -331,7 +310,7 @@ const ProcessSection: React.FC<ProcessSectionProps> = ({ className }) => {
               </div>
               
               {/* 社区贡献维度 */}
-              <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-6 hover:bg-white/10 hover:border-white/20 transition-all duration-300">
+              <div className="bg-white/5 backdrop-blur-sm border-2 border-white rounded-2xl p-6 hover:bg-white/10 hover:border-white transition-all duration-300">
                 <div className="flex items-center justify-center mb-4">
                   <div className="inline-flex items-center justify-center w-12 h-12 rounded-xl bg-purple-400/20 border border-purple-400/30">
                     <Users className="w-6 h-6 text-purple-400" />
@@ -363,45 +342,7 @@ const ProcessSection: React.FC<ProcessSectionProps> = ({ className }) => {
         </motion.div>
 
         {/* 参赛要求 */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.3 }}
-          viewport={{ once: true }}
-        >
-          <h3 className="text-2xl lg:text-3xl font-bold text-white text-center mb-8">参赛须知</h3>
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-            {requirements.map((req, index) => {
-              const Icon = req.icon
-              
-              return (
-                <motion.div
-                  key={req.title}
-                  initial={{ opacity: 0, y: 30 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.8, delay: 0.5 + index * 0.2 }}
-                  viewport={{ once: true }}
-                  className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-5 hover:bg-white/10 hover:border-white/20 transition-all duration-300"
-                >
-                  <div className="flex items-center mb-4">
-                    <div className="w-10 h-10 rounded-lg bg-white/10 flex items-center justify-center mr-3">
-                      <Icon className="w-5 h-5 text-white" />
-                    </div>
-                    <h4 className="text-lg font-bold text-white">{req.title}</h4>
-                  </div>
-                  <ul className="space-y-3">
-                    {req.items.map((item, idx) => (
-                      <li key={idx} className="flex items-start text-sm text-gray-300">
-                        <div className="w-1.5 h-1.5 rounded-full bg-white/40 mt-2 mr-3 flex-shrink-0" />
-                        {item === '年满18周岁的个人开发者' ? '所有热爱编程的爱好者' : item}
-                      </li>
-                    ))}
-                  </ul>
-                </motion.div>
-              )
-            })}
-          </div>
-        </motion.div>
+
       </div>
     </section>
   )

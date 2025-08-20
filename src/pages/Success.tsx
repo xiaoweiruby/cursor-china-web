@@ -93,12 +93,7 @@ const Success: React.FC = () => {
   return (
     <Layout showNavigation={false} showFooter={false}>
       <div className="min-h-screen bg-black relative overflow-hidden">
-        {/* 背景装饰 */}
-        <div className="absolute inset-0">
-          <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-green-400/10 rounded-full blur-3xl" />
-          <div className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-blue-400/10 rounded-full blur-3xl" />
-          <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-purple-400/5 rounded-full blur-3xl" />
-        </div>
+
 
         {/* 星光背景 */}
         <div className="absolute inset-0">

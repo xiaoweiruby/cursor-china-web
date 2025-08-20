@@ -77,14 +77,10 @@ const IntroSection: React.FC<IntroSectionProps> = ({ className }) => {
 
   return (
     <section 
-      className={`py-16 lg:py-24 relative overflow-hidden ${className}`}
+      className={`py-8 md:py-16 relative overflow-hidden ${className}`}
       id="intro"
     >
-      {/* 背景装饰 */}
-      <div className="absolute inset-0">
-        <div className="absolute top-0 left-1/4 w-72 h-72 bg-white/3 rounded-full blur-3xl" />
-        <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-white/2 rounded-full blur-3xl" />
-      </div>
+
 
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* 标题区域 */}
@@ -125,7 +121,7 @@ const IntroSection: React.FC<IntroSectionProps> = ({ className }) => {
                 className="relative group"
               >
                 {/* 卡片 */}
-                <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-8 h-full transition-all duration-300 group-hover:bg-white/10 group-hover:border-white/20 group-hover:scale-105">
+                <div className="bg-white/5 backdrop-blur-sm border-2 border-white rounded-2xl p-8 h-full transition-all duration-300 group-hover:bg-white/10 group-hover:border-white group-hover:scale-105">
                   {/* 图标 */}
                   <div className={`flex items-center justify-center w-16 h-16 rounded-2xl ${feature.bgColor} mb-6 mx-auto`}>
                     <Icon className={`w-8 h-8 ${feature.color}`} />
